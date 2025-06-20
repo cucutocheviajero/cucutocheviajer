@@ -1,0 +1,4 @@
+﻿Time (absolute),Level,Robot name,Process,Hostname,Host Identity,Message
+2025-06-15 23:23:11.943,Info,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,Prueba Pagina ejecución iniciada
+2025-06-15 23:23:15.117,Info,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,Configuración del Healing Agent.
+2025-06-15 23:25:25.630,Info,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,Prueba Pagina ejecución terminada

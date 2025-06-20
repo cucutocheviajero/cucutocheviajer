@@ -1,0 +1,36 @@
+﻿Time (absolute),Level,Robot name,Process,Hostname,Host Identity,Message
+2025-06-15 23:15:49.169,Info,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,Prueba Pagina ejecución iniciada
+2025-06-15 23:15:52.940,Info,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,Configuración del Healing Agent.
+2025-06-15 23:15:58.287,Warning,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,Se produjo un error en la ejecución de 'Click 'Contáctenos(1)'' con la excepción NodeNotFoundException.
+2025-06-15 23:15:58.288,Info,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,Healing Agent: iniciando el análisis de recuperación.
+2025-06-15 23:16:15.712,Warning,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,Healing Agent: se produjo un error en la recuperación.
+2025-06-15 23:16:16.025,Info,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,El Healing Agent no pudo recuperar la actividad.
+2025-06-15 23:16:16.457,Info,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,Prueba Pagina ejecución terminada
+2025-06-15 23:17:57.260,Info,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,Prueba Pagina ejecución iniciada
+2025-06-15 23:18:00.135,Info,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,Configuración del Healing Agent.
+2025-06-15 23:18:24.619,Info,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,Prueba Pagina ejecución terminada
+2025-06-15 23:18:37.482,Info,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,Prueba Pagina ejecución iniciada
+2025-06-15 23:18:40.615,Info,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,Configuración del Healing Agent.
+2025-06-15 23:19:15.693,Info,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,Prueba Pagina ejecución terminada
+2025-06-15 23:19:25.948,Info,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,Prueba Pagina ejecución iniciada
+2025-06-15 23:19:28.787,Info,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,Configuración del Healing Agent.
+2025-06-15 23:20:53.649,Warning,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,Se produjo un error en la ejecución de 'Click 'I(1)'' con la excepción UiAutomationException.
+2025-06-15 23:20:53.651,Info,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,Healing Agent: iniciando el análisis de recuperación.
+2025-06-15 23:20:54.579,Warning,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,Healing Agent: se produjo un error en la recuperación.
+2025-06-15 23:20:54.827,Info,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,El Healing Agent no pudo recuperar la actividad.
+2025-06-15 23:21:04.405,Error,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,"Click 'I(1)': Se alcanzó el tiempo de espera.
+in Main.xaml
+    at NClick ""Click 'I(1)'""
+    at Sequence ""Sequence""
+    at ProcessTrackingScope ""Process Tracking Scope""
+    at ProcessTrackingScope ""Process Tracking Scope""
+    at Sequence ""Sequence""
+    at NApplicationCard ""Browser(2)""
+    at Sequence ""Sequence""
+    at Sequence ""Main Sequence""
+    at Main ""Main""
+"
+2025-06-15 23:21:08.055,Info,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,Prueba Pagina ejecución terminada
+2025-06-15 23:23:11.943,Info,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,Prueba Pagina ejecución iniciada
+2025-06-15 23:23:15.117,Info,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,Configuración del Healing Agent.
+2025-06-15 23:25:25.630,Info,og.salas@fesc.edu.co-unattended,Prueba Pagina,LAPTOP-H0GR28T5,LAPTOP-H0GR28T5\Omar,Prueba Pagina ejecución terminada
