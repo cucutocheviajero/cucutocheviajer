@@ -1,0 +1,238 @@
+/* Header */
+header {
+    background: linear-gradient(to left, #FF0000, white);
+    padding: 10px 0;
+    text-align: center;
+    height: 3cm;
+    font-size: 20px;
+    font-family: Sandraloca; 
+}
+
+nav {
+        margin-top: -20px;
+}
+nav a {
+    color: black;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.logo_header {
+    float: left;
+    margin: 10px;
+    height: 80px;
+    padding-right: 1%;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #FF0000, white); 
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    margin-top: auto;  /* hace que el footer se empuje al final en layouts con flex */
+}
+
+.social-media {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.social-media li {
+    margin: 0 10px;
+}
+
+.social-media a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    color: #000000;
+}
+
+.social-media i {
+    font-size: 2em;
+}
+
+.politica {
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.toche {
+    font-family: 'Zeyada', cursive; 
+    font-size: 2em;
+    margin-top: 10px;
+}
+
+.logo_footer {
+    height: 80px;
+    margin-bottom: 10px;
+}
+body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    padding: 10%;
+}
+
+label, input, textarea, button {
+    margin-bottom: 10px;
+}
+
+.video-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; 
+    margin: 0;
+}
+
+.video-item {
+    width: 15%;    
+    padding: 20%;
+    border-radius: 10px;
+}
+
+.video-item video {
+    width: 100%;
+    height: auto;
+}
+
+.video-description {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* contact */
+.boton-enviar {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+.contactenos {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.input-contacto {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+.formulario {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.flash-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.flash-message {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #28a745;
+    text-align: center;
+}
+
+.alert-error {
+    background-color: #dc3545;
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'Travelista';
+    src: url('/static/fonts/Travelista.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Amsterdam';
+    src: url('/static/fonts/Amsterdam.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Wanderlust';
+    src: url('/static/fonts/Wanderlust.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arvo-Regular';
+    src: url('/static/fonts/Arvo-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Travel-Journal';
+    src: url('/static/fonts/Travel-Journal.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sandraloka';
+    src: url('/static/fonts/Sandraloka.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

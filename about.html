@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+      <link rel="stylesheet" href="/static/css/styles.css">
+      <link href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+      <!-- Header -->
+      {% include 'header.html' %}
+      <div class="content">
+        <style>
+            .container {
+              max-width: 1100px;
+              margin: 40px auto;
+              padding: 20px;
+              background-color: #fff;
+              border-radius: 10px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+          
+            .titulo {
+              text-align: center;
+              font-size: 36px;
+              font-weight: bold;
+              margin-bottom: 10px;
+            }
+          
+            .subtitulo {
+              text-align: center;
+              font-size: 24px;
+              margin-bottom: 20px;
+            }
+          
+            .biografia {
+              float: right;
+              width: 60%;
+              padding: 20px;
+              font-size: 18px;
+            }
+            .mision-container {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+            }
+
+            .mision-texto {
+              width: 60%;
+              padding: 20px;
+              text-align: justify;
+            }
+          
+            .foto {
+              width: 50%;
+              padding: 20px;
+            }
+
+            .foto-vision {
+              width: 100%;
+            }
+
+            .biografia-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+
+          
+            .mision {
+              clear: both;
+              padding: 20px;
+              font-size: 18px;
+              text-align: center;
+            }
+
+            .biografia-texto {
+            width: 60%;
+            padding: 20px;
+            text-align: justify;
+            }
+
+            .vision-container {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+
+            .vision-texto {
+              width: 100%;
+              padding: 20px;
+              text-align: justify;
+            }
+
+          
+            .vision {
+              padding: 20px;
+              font-size: 18px;
+              text-align: center;
+            }
+          </style>
+          
+          <div class="container">
+            <div class="foto-vision">
+              <div id="carouselCabezera" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  {% for img in cabezera_imgs %}
+                    <div class="carousel-item {% if loop.first %}active{% endif %}">
+                      <img src="{{ img }}" class="d-block w-100" style="height: 400px; object-fit: cover;">
+                    </div>
+                  {% endfor %}
+                </div>
+                {% if cabezera_imgs|length > 1 %}
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselCabezera" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselCabezera" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                  </button>
+                {% endif %}
+              </div>
+            </div>
+            <br><br>
+                
+            <div class="container py-4">
+              <!-- Sección blibliografia -->
+              <div class="mision-container mb-5">
+                <div class="mision-container mb-5 d-flex flex-column align-items-center text-center">
+                  <!-- Texto -->
+                  <div class="col-md-6 mision-texto">
+                    <!-- <center><h2>Biografia</h2></center> -->
+                    <h1 style="font-family: 'Wanderlust';font-size: 50px;" class="titulo">Omar Gabriel Salas Chia</h1>
+                    <h2 style="font-family: Zeyada;font-size: 60px;" class="subtitulo">Cucutoche viajero</h2>
+                    <p style="white-space: pre-line; font-family: 'Arvo-Regular';text-align: justify">
+                      El proyecto Cucutoche Viajero, nace el dia 7 de Enero del 2020,  es un proyecto  que se basa en hacer moto turismo, con la finalidad de 
+                      recorrer los lugares turísticos, al igual de los pocos concurridos, desde mi punto de vista les mostraré que nos tiene para Ofrecer Norte 
+                      de Santander.
+                      <br>
+                      Nací el 16 de Septiembre de 1994, en Cúcuta, corazón del Norte de Santander, donde crecí rodeado de paisajes montañosos, historias 
+                      ancestrales y una cultura vibrante que despertó en mí una pasión innata por el turismo y  la exploración. Desde pequeño, recuerdo cómo me 
+                      fascinaban las historias que contaban los mayores sobre los pueblos, las tradiciones y los rincones mágicos que parecían escondidos a 
+                      simple vista. 
+                      <br>
+                      Hoy, lidero este proyecto turístico con el corazón lleno de orgullo y esperanza con el deseo de descubrir mi tierra sumando kilómetros de 
+                      aventuras, impulsados por una curiosidad insaciable por los secretos que cada municipio, cada río y cada montaña del Norte de Santander 
+                      podían ofrecer.
+                      <br>
+                      Este proyecto es mucho más que un viaje; es un sueño hecho realidad. Es mi forma de devolverle al Norte de Santander  un poco de todo lo 
+                      que me ha dado: su belleza, su cultura y su espíritu resiliente. Y espero que, al compartir mi  camino, más personas se sumen a esta misión 
+                      de descubrir, preservar y amar nuestra tierra.
+                    </p>
+                  </div>
+                  <!-- Carrusel -->
+                  <div class="col-md-6">
+                    <div id="carouselBiografia" class="carousel slide" data-bs-ride="carousel">
+                      <div class="carousel-inner">
+                        {% for img in biografia_imgs %}
+                          <div class="carousel-item {% if loop.first %}active{% endif %}">
+                            <img src="{{ img }}" class="d-block w-100" style="height: 400px; object-fit: cover;">
+                          </div>
+                        {% endfor %}
+                      </div>
+                      {% if biografia_imgs|length > 1 %}
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselBiografia" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselBiografia" data-bs-slide="next">
+                          <span class="carousel-control-next-icon"></span>
+                        </button>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Sección MISIÓN -->
+              <div class="mision-container mb-5">
+                <div class="mision-container mb-5 d-flex flex-column align-items-center text-center">
+                  <!-- Texto -->
+                  <div class="col-md-6 mision-texto">
+                    <center style="font-family: 'Travelista';font-size: 50px;" ><h2>Misión</h2></center>
+                    <p style="white-space: pre-line; font-family: 'Arvo-Regular';text-align: justify">
+                      La Misión del Cucutoche Viajero es apoyar y promover la belleza natural, la diversidad cultural y el patrimonio histórico del Norte de 
+                      Santander, inspirando a locales y visitantes a descubrir los tesoros de esta región a través de la exploración y la documentación de sus 
+                      paisajes, tradiciones y costumbres.
+                      <br>
+                      Mi objetivo es el turismo en el Departamento, mostrar los paisajes, la naturaleza y las rutas. Y así documentar cada viaje, presupuesto y 
+                      las rutas por donde se pueden acceder al lugar porque creo en el turismo como una herramienta para conectar personas con sus raíces, 
+                      fomentar el respeto por el medioambiente y fortalecer el sentido de identidad regional. Trabajar para impulsar un desarrollo turístico 
+                      sostenible que valore y preserve la riqueza cultural y ambiental de nuestros pueblos, garantizando que las generaciones futuras también 
+                      puedan disfrutar de este legado.
+                      <br>
+                      Mi misión incluye no solo mostrar la belleza de nuestra región, sino también colaborar activamente con comunidades locales, apoyando 
+                      proyectos que contribuyan al bienestar económico, social y cultural de los municipios del Norte de Santander.
+                    </p>
+                  </div>
+                  <!-- Carrusel -->
+                  <div class="col-md-6">
+                    <div id="carouselMision" class="carousel slide" data-bs-ride="carousel">
+                      <div class="carousel-inner">
+                        {% for img in mision_imgs %}
+                          <div class="carousel-item {% if loop.first %}active{% endif %}">
+                            <img src="{{ img }}" class="d-block w-100" style="height: 400px; object-fit: cover;">
+                          </div>
+                        {% endfor %}
+                      </div>
+                      {% if mision_imgs|length > 1 %}
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselMision" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselMision" data-bs-slide="next">
+                          <span class="carousel-control-next-icon"></span>
+                        </button>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <!-- Sección VISIÓN -->
+              <div class="vision-container mb-5">
+                <div class="mision-container mb-5 d-flex flex-column align-items-center text-center">
+                  <!-- Texto -->
+                  <div class="col-md-6 mision-texto">
+                    <center style="font-family: 'Travelista';font-size: 50px;"><h2>Visión</h2></center>
+                    <p style="white-space: pre-line; font-family: 'Arvo-Regular';text-align: justify">
+                      Convertirme en un referente local, nacional e internacional en la promoción del turismo en el Norte de Santander, destacándome como una 
+                      fuente confiable, auténtica y apasionada de información, experiencias y recursos para los amantes de los viajes.
+                      <br>
+                      Aspiro a ser reconocido como líder en la creación de contenido turístico que inspire a otros a visitar y valorar nuestra región, y como 
+                      promotor del desarrollo económico y social a través del turismo responsable. En el futuro, quiero ser un puente entre nuestra región y el 
+                      mundo, mostrando la riqueza de nuestras costumbres y tradiciones, y consolidando al Norte de Santander como un destino turístico imperdible, 
+                      lleno de cultura, historia y paisajes únicos.
+                    </p>
+                  </div>
+                  <!-- Carrusel -->
+                  <div class="col-md-6">
+                    <div id="carouselVision" class="carousel slide" data-bs-ride="carousel">
+                      <div class="carousel-inner">
+                        {% for img in vision_imgs %}
+                          <div class="carousel-item {% if loop.first %}active{% endif %}">
+                            <img src="{{ img }}" class="d-block w-100" style="height: 400px; object-fit: cover;">
+                          </div>
+                        {% endfor %}
+                      </div>
+                      {% if vision_imgs|length > 1 %}
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselVision" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselVision" data-bs-slide="next">
+                          <span class="carousel-control-next-icon"></span>
+                        </button>
+                      {% endif %}
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            
+              <!-- Sección VALORES -->
+              <div class="valores-container mb-5">
+                <div class="mision-container mb-5 d-flex flex-column align-items-center text-center">
+                  <!-- Texto -->
+                  <div class="col-md-6 valores-texto">
+                    <center style="font-family: 'Travelista';font-size: 50px;"><h2>Valores</h2></center>
+                    <p style="white-space: pre-line; font-family: 'Arvo-Regular';text-align: justify">
+                      Nuestros valores fundamentales guían cada kilómetro de este viaje. Entre ellos destacan:
+                      <ul style="white-space: pre-line; font-family: 'Arvo-Regular';text-align: justify">
+                        <li><strong>Pasión:</strong> por nuestra tierra, su gente y sus historias.</li>
+                        <li><strong>Respeto:</strong> por el entorno, la cultura y las comunidades locales.</li>
+                        <li><strong>Compromiso:</strong> con un turismo sostenible y consciente.</li>
+                        <li><strong>Autenticidad:</strong> en cada experiencia compartida.</li>
+                        <li><strong>Solidaridad:</strong> con los pueblos que visitamos y difundimos.</li>
+                      </ul>
+                      <span style="white-space: pre-line; font-family: 'Arvo-Regular';text-align: justify">Cada valor representa la esencia del Cucutoche Viajero: mostrar el Norte de Santander con honestidad, amor y responsabilidad.</span>
+                    </p>
+                  </div>
+                  <!-- Carrusel -->
+                  <div class="col-md-6">
+                    <div id="carouselValores" class="carousel slide" data-bs-ride="carousel">
+                      <div class="carousel-inner">
+                        {% for img in valores_imgs %}
+                          <div class="carousel-item {% if loop.first %}active{% endif %}">
+                            <img src="{{ img }}" class="d-block w-100" style="height: 400px; object-fit: cover;">
+                          </div>
+                        {% endfor %}
+                      </div>
+                      {% if valores_imgs|length > 1 %}
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselValores" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselValores" data-bs-slide="next">
+                          <span class="carousel-control-next-icon"></span>
+                        </button>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h2 style="font-family: 'Travelista';font-size: 50px;">DANDO A CONOCER el Proyecto CUCUTOCHE VIAJERO!!!</h2>
+              <br>
+              <video 
+                src="/static/img/entrevista.mp4"
+                controls 
+                poster="/static/img/img_entrevista.jpg" 
+                style="width: 100%; height: 500%;">
+            </video>
+          </div>
+        </div>
+      <!-- Footer -->
+      {% include 'footer.html' %}
+    </body>
+</html>

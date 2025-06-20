@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <link rel="stylesheet" href="/static/css/styles.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+        <!-- Header -->
+        {% include 'header.html' %}
+        <style>
+            .municipios-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 40px;
+                justify-content: center;
+                min-height: 100%;
+            }
+
+            .municipio {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background-size: cover;
+                background-position: center;
+                position: relative;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                transition: transform 0.3s ease;
+                cursor: pointer;
+            }
+
+            .municipio:hover {
+                transform: scale(1.08);
+            }
+
+            .municipio .nombre {
+                position: absolute;
+                bottom: -30px;
+                width: 100%;
+                text-align: center;
+                font-family: 'Travelista';
+                font-size: 1.3em;
+                color: #333;
+            }
+
+            .department-card {
+                position: relative;
+                background-size: cover;
+                background-position: center;
+                height: 200px;
+                width: 100%;
+                max-width: 1400px;
+                border-radius: 15px;
+                overflow: hidden;
+                transition: transform 0.3s ease;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                cursor: pointer;
+            }
+
+
+            .department-card:hover {
+                transform: scale(1.05);
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+            }
+
+            .department-overlay {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                color: white;
+                text-align: center;
+                padding: 10px;
+                font-size: 30px;
+                font-family: 'Amsterdam';
+            }
+
+            .departments-row {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+
+            .section-wrapper { background-color: #f5f5f5; padding: 2rem; margin-bottom: 2rem; border-radius: 10px; }
+            .section-carousel { background-color: #e8f5e9; padding: 1rem; margin-top: 1rem; border-radius: 10px; }
+            .places-carousel { background-color: #fce4ec; padding: 1rem; margin-top: 1rem; border-radius: 10px; }
+
+            .carousel-inner img {
+            height: 400px;
+            object-fit: cover;
+            }
+
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+            filter: invert(0%) sepia(100%) saturate(10000%) hue-rotate(200deg);
+            }
+
+            .place-info {
+            text-align: center;
+            padding: 1rem;
+            }
+
+        </style>
+        <h1 class="text-center mt-4" style="font-family: 'Wanderlust';font-size: 70px;">Estos son los municipios de Norte de Santander</h1>
+        <div class="municipios-container container mt-5" style="background-color: #fce4ec; padding: 1rem; margin-top: 1rem; border-radius: 10px;">
+            {% for municipalitie in municipalities %}
+                <a href="/municipality/{{ municipalitie.id }}" style="text-decoration: none; color: inherit;">
+                    <div class="municipio" style="background-image: url('{{ municipalitie.background_url }}');">
+                        <br/>
+                        <span class="nombre">{{ municipalitie.name }}</span>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+        <br><br>
+        <div class="container" style="display: flex; flex-direction: column; align-items: center;">
+            <h1 style="font-family: 'Wanderlust';font-size: 45px;">⏯️TOP 10 DE LUGARES INCRÎBLES QUE DEBES CONOCER EN NORTE DE SANTANDER</h1>
+            <br>
+            <video 
+                src="/static/img/top.mp4"
+                controls 
+                poster="/static/img/img_top.jpg" 
+                style="width: 80%; height: 500px;">
+            </video>
+        </div>
+        <br><br>
+        <div class="container mt-5">
+            <h1 class="text-center mt-4" style="font-family: 'Wanderlust';font-size: 70px;">Mis viajes por los Departamentos de Colombia</h1>
+            <div>
+                {% for dept in departments %}
+                <div>
+                    <a href="{{ dept.link }}" style="text-decoration: none;">
+                        <div class="department-card" style="background-image: url('{{ dept.background_url }}');">
+                            <div class="department-overlay">
+                                {{ dept.name }}
+                            </div>
+                        </div>
+                    </a>
+                    <br>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <br><br>
+        <div class="container mt-5">
+            <h2 class="mb-4 text-center" style="font-family: 'Wanderlust';font-size: 70px;">📍 Donde todo comenzó 🧭</h2>
+        {% for section in home_sections %}
+            <div class="section-wrapper">
+            <!-- Título y descripción -->
+            <h1 class="text-center" style="font-family: 'Travelista';font-size: 50px;">{{ section.title }}</h1>
+            <p style="white-space: pre-line; font-family: 'Arvo-Regular';text-align: justify">{{ section.info }}</p>
+
+            <!-- Carrusel de imágenes del folder -->
+            {% if section.carousel %}
+                <div id="sectionCarousel{{ loop.index }}" class="carousel slide section-carousel" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    {% for img in section.carousel %}
+                    <div class="carousel-item {% if loop.first %}active{% endif %}">
+                        <img src="{{ img }}" class="d-block w-100" alt="Imagen de sección {{ section.title }}">
+                    </div>
+                    {% endfor %}
+                </div>
+                {% if section.carousel|length > 1 %}
+                    <button class="carousel-control-prev" type="button" data-bs-target="#sectionCarousel{{ loop.index }}" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#sectionCarousel{{ loop.index }}" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    </button>
+                {% endif %}
+                </div>
+            {% endif %}
+
+            <!-- Carrusel de lugares -->
+            {% if section.places %}
+                <div id="placesCarousel{{ loop.index }}" class="carousel slide places-carousel" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <h2 class="mb-4 text-center" style="font-family: 'Wanderlust';font-size: 70px;">Lugares para visitar</h2>
+                    {% for place in section.places %}
+                    <div class="carousel-item {% if loop.first %}active{% endif %}">
+                        <div class="place-info">
+                            <h1 style="font-family: 'Travelista';font-size: 50px;">{{ place.name }}</h1>
+                            {% if place.carousel and place.carousel|length > 0 %}
+                                <img src="{{ place.carousel[0] }}" class="d-block mx-auto mb-3" style="max-height: 300px; object-fit: cover;">
+                            {% endif %}
+                            <p style="white-space: pre-line; font-family: 'Arvo-Regular';text-align: justify">{{ place.info }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% if section.places|length > 1 %}
+                    <button class="carousel-control-prev" type="button" data-bs-target="#placesCarousel{{ loop.index }}" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#placesCarousel{{ loop.index }}" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    </button>
+                {% endif %}
+                </div>
+            {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+    <!-- Footer -->
+    {% include 'footer.html' %}
+    </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+
+    <body>
+        <!-- Header -->
+        {% include 'header.html' %}
+        <div class="content">
+        <style>
+            body {
+                background-color: #f9f9f9;
+                color: #333;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 2.5em;
+                margin-bottom: 0.5em;
+                color: #2c3e50;
+            }
+
+            p {
+                font-size: 1.2em;
+                line-height: 1.5em;
+                margin: 1em 0;
+                color: #555;
+            }
+
+            .municipio {
+                margin: 2em auto;
+                padding: 1.5em;
+                max-width: 1200px;
+                background-color: #ffffff;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+
+            .municipio h2 {
+                font-size: 2em;
+                margin-bottom: 1em;
+                color: #3498db;
+            }
+
+            .municipio video {
+                display: block;
+                margin: 0 auto 1em;
+                max-width: 100%;
+                width: 900px;
+                height: auto;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .municipio p {
+                font-size: 1em;
+                margin-top: 1em;
+                color: #444;
+            }
+
+            .lugares {
+                margin-top: 2em;
+                text-align: center;
+            }
+
+            .lugares h2 {
+                font-size: 1.8em;
+                color: #8e44ad;
+                margin-bottom: 1em;
+            }
+
+            .lugares h3 {
+                font-size: 1.2em; /* Tamaño más pequeño */
+                font-style: italic !important; /* Texto en cursiva */
+                font-family: "Georgia", serif;
+                color: #8e44ad;
+                margin-bottom: 1em;
+            }
+
+            .lugar {
+                display: inline-block;
+                margin: 1em;
+                padding: 1em;
+                max-width: 300px;
+                background-color: #f4f4f4;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+
+            .lugar video {
+                display: block;
+                max-width: 100%;
+                height: auto;
+                border-radius: 8px;
+                margin-bottom: 0.5em;
+            }
+
+            .lugar p {
+                font-size: 0.9em;
+                color: #555;
+                margin-bottom: 1em;
+            }
+
+            .btn-saber-mas {
+                display: inline-block;
+                padding: 0.5em 1em;
+                background-color: #3498db;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 5px;
+                font-size: 0.9em;
+                font-weight: bold;
+            }
+
+            .btn-saber-mas:hover {
+                background-color: #1d6fa5;
+            }
+        </style>
+
+        <div class="municipio">
+            <h1 style="font-family: 'Wanderlust';font-size: 80px;">{{ municipalities.name }}</h1>
+            <h1 style="font-family: 'Travelista';font-size: 35px;">{{ municipalities.subtitle }}</h1>
+            <p style="white-space: pre-line; font-family: 'Arvo-Regular';text-align: justify">{{ municipalities.information }}</p>
+            <img src="{{ url_for('static', filename=municipalities.image.replace('static/', '')) }}" style="width: 100%; height: 600px; object-fit: cover;">
+            
+            <div class="lugares">
+                <h1 style="font-family: 'Wanderlust';font-size: 80px;">Lugares de Interés</h2>
+                <h1 style="font-family: 'Travelista';font-size: 30px;">Estos Son los hermosos lugares que puedes conocer en el bello municipio de {{ municipalities.name }}</h1>
+                {% for place in municipalities.places %}
+                    <div class="lugar">
+                        <h1 style="font-family: 'Travel-Journal';font-size: 35px;">{{ place.name }}</h1>
+                        <video src="{{ url_for('static', filename=place.video.replace('static/', '')) }}" controls poster="{{ url_for('static', filename=place.image.replace('static/', '')) }}" style="width: 100%; height: 400px; object-fit: cover;"></video>
+                        <p style="white-space: pre-line; font-family: 'Arvo-Regular';text-align: justify">{{ place.information[:55] }}...</p>
+                        <a href="{{ url_for('place_detail', place_id=place.id) }}" class="btn-saber-mas">Saber más</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        </div>
+    <!-- Footer -->
+    {% include 'footer.html' %}
+    </body>
+
+    
+
+</html>
