@@ -21,7 +21,7 @@ app.secret_key = '12345678'  # Cambia esto por una clave única
 
 #BLOQUE 2 FUNCIONES AUXILIARES
 # Configuración de la base de datos
-DATABASE_URL = "postgresql://cucutoche:123456@localhost:5433/cucutoche"
+DATABASE_URL = "postgresql://cucutoche:123456@localhost:5432/cucutoche"
 
 #CONECCION A LA BASE DE DATOS
 def connect_db():
